@@ -19,19 +19,6 @@ span {
     text-align: center;
 }
 
-.title {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    left: 0;
-    right: 0;
-    top: 300px;
-    bottom: 0;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 500;
-}
-
 @media screen and (max-width:575.98px){
     h1 {
         font-size: 6;
