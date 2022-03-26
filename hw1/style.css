@@ -4,6 +4,7 @@ p2 {
     background-color: chocolate;
 }
 img {
+    float:left;
     width: 100%;
     height: auto;
 }
