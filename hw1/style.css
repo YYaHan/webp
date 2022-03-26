@@ -1,5 +1,14 @@
+p2 {
+    float: right;
+    color: blue;
+    background-color: chocolate;
+}
+img {
+    width: 100%;
+    height: auto;
+}
 @media screen and (max-width:575.98px){
-    h2 {
+    p2 {
         font-size: 6;
         background-color: brown;
     }
@@ -10,7 +19,7 @@
     }
 }
 @media screen and (max-width:767.98px) and (min-width:576px) {
-    h2 {
+    p2 {
         font-size: 5;
         background-color: darkgoldenrod;
     }
@@ -21,9 +30,9 @@
     }
 }
 @media screen and (max-width:991.98px) and (min-width:768px) {
-    h2 {
+    p2 {
         font-size: 5;
-        background-color: darkgoldenrod;
+        background-color: darkgrey;
     }
     img{
         float:right;
@@ -32,7 +41,7 @@
     }
 }
 @media screen and (max-width:1199.98px) and (min-width:992px) {
-    h2 {
+    p2 {
         font-size: 5;
         background-color: darkgoldenrod;
     }
@@ -43,9 +52,9 @@
     }
 }
 @media screen and (min-width:1200px) {
-    h2 {
+    p2 {
         font-size: 5;
-        background-color: darkgoldenrod;
+        background-color: olive;
     }
     img{
         float:right;
