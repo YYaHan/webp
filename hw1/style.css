@@ -32,24 +32,6 @@ span {
     font-weight: 500;
 }
 
-audio {
-    position: fixed;
-    bottom: 50px;
-    right: 0;
-}
-
-
-@keyframes muscis {
-    from {
-        transform: rotate(0deg);
-        opacity: .6;
-    }
-    to {
-        transform: rotate(360deg);
-        opacity: .8;
-    }
-}
-
 @media screen and (max-width:575.98px){
     h1 {
         font-size: 6;
