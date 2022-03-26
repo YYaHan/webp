@@ -1,5 +1,5 @@
 p2 {
-    float: right;
+    float: left;
     color: blue;
     background-color: chocolate;
 }
@@ -24,7 +24,7 @@ img {
         background-color: darkgoldenrod;
     }
     img{
-        float:right;
+        float:left;
         width:100%;
         height:auto;
     }
@@ -35,7 +35,7 @@ img {
         background-color: darkgrey;
     }
     img{
-        float:right;
+        float:left;
         width:100%;
         height:auto;
     }
@@ -46,7 +46,7 @@ img {
         background-color: darkgoldenrod;
     }
     img{
-        float:right;
+        float:left;
         width:100%;
         height:auto;
     }
@@ -57,7 +57,7 @@ img {
         background-color: olive;
     }
     img{
-        float:right;
+        float:left;
         width:100%;
         height:auto;
     }
