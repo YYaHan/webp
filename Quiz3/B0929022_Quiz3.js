@@ -1,10 +1,10 @@
-const log = document.getElementById('content');
+const log = document.getElementById('log');
 
 document.addEventListener('keydown', logkey);
 
 function logkey(e) {
-    if(65 <= e.keycode && keycode <= 112)
+    if(65 <= e.keyCode && e.keyCode <= 112)
     {
-        log.textcontent += $('e.key');
+        log.textContent += ` ${e.key} `;
     }
 }
