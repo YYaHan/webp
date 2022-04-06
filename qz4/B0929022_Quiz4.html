@@ -1,0 +1,26 @@
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>My Document</title>
+
+</head>
+
+<body>
+    <button id="btn">Change this document.</button>
+    <h1>CGU</h1>
+    <p>好棒棒</p>
+</body>
+</head>
+
+<script>
+    $(document).ready(function () {
+        $("#btn").click(function () {
+            $("h1").text("CSIE@CGU");
+            $("p").text("怎麼那麼棒！！.");
+        });
+    })
+
+</script>
+
+</html>
