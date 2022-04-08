@@ -43,7 +43,7 @@ $(document).ready(function () {
 
 //產生隨機字母
 function createCode() {
-    var index = [parseInt(Math.random() * 26)];
+    var index = [Math.floor(Math.random() * 26)];
     for (var i = 0; i < output; i++) {
         for (var j = 0; j < 6; j++) {
             $(race[j]).prepend(raceClass[j] + img[index]);
@@ -64,7 +64,7 @@ function deleteCh(key) {
             break;
         }
     }
-    if (est) {
+    if (est != 0) {
         deletecodearray(race[racenum], CODE[key]);
     }
 }
