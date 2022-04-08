@@ -10,36 +10,9 @@ var time2 = 0;
 var CODE = ["#A", "#B", "#C", "#D", "#E", "#F", "#G", "#H", "#I",
     "#J", "#K", "#L", "#M", "#N", "#O", "#P", "#Q", "#R", "#S", "#T",
     "#U", "#V", "#W", "#X", "#Y", "#Z"];
-//var codeArray = [];
-//var timeArray = [];
 var game_id = null;
 race = ["#race1", "#race2", "#race3", "#race4", "#race5", "#race6"]
 raceClass = ['<img class=ri1', '<img class=ri2', '<img class=ri3', '<img class=ri4', '<img class=ri5', '<img class=ri6'];
-
-$(document).ready(function () {
-    $("#startBtn").click(function () {
-        $(document).keydown(recordTime);
-        $(document).keydown(function (key) {
-            addchar();
-            deleteCh(key.keyCode - 65);
-        });
-        var clk = setInterval(function () {
-            if (($("img").filter(".race1").last().offset().left) >= 1100 || $("img").filter(".race2").last().offset().left >= 1100 || $("img").filter(".race3").last().offset().left >= 1100 || $("img").filter(".race4").last().offset().left >= 1100 || $("img").filter(".race5").last().offset().left >= 1100 || $("img").filter(".race6").last().offset().left >= 1100) {
-                alert("輸光！");
-                clearInterval(clk);
-            }
-            $("img").filter(".race1").animate({ left: "+=50px" });
-            $("img").filter(".race2").animate({ left: "+=75px" });
-            $("img").filter(".race3").animate({ left: "+=155px" });
-            $("img").filter(".race4").animate({ left: "+=147px" });
-            $("img").filter(".race5").animate({ left: "+=68px" });
-            $("img").filter(".race6").animate({ left: "+=98px" });
-        }, 1000);
-    });
-});
-$(document).ready(function () {
-    $("#button").click(stopGame);
-});
 
 //產生隨機字母
 function createCode() {
@@ -111,3 +84,29 @@ function stopGame() {
     codeArray = [];
     document.getElementById("startBtn").disabled = false;
 }
+
+$(document).ready(function () {
+    $("#startBtn").click(function () {
+        $(document).keydown(recordTime);
+        $(document).keydown(function (key) {
+            addchar();
+            deleteCh(key.keyCode - 65);
+        });
+        var clk = setInterval(function () {
+            if (($("img").filter(".race1").last().offset().left) >= 1100 || $("img").filter(".race2").last().offset().left >= 1100 || $("img").filter(".race3").last().offset().left >= 1100 || $("img").filter(".race4").last().offset().left >= 1100 || $("img").filter(".race5").last().offset().left >= 1100 || $("img").filter(".race6").last().offset().left >= 1100) {
+                alert("輸光！");
+                clearInterval(clk);
+            }
+            $("img").filter(".race1").animate({ left: "+=50px" });
+            $("img").filter(".race2").animate({ left: "+=75px" });
+            $("img").filter(".race3").animate({ left: "+=155px" });
+            $("img").filter(".race4").animate({ left: "+=147px" });
+            $("img").filter(".race5").animate({ left: "+=68px" });
+            $("img").filter(".race6").animate({ left: "+=98px" });
+        }, 1000);
+    });
+});
+
+$(document).ready(function () {
+    $("#button").click(stopGame);
+});
