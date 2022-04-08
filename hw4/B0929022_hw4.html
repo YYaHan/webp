@@ -6,14 +6,17 @@
     <meta charset="UTF-8">
     <title>打字機3.0</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../hw4/B0929022_hw4.js"></script>
 </head>
 
 <body>
-    <button id="btn">Start!</button>
-    <button id="stp">Stop!</button>
+    <div class="btn">
+        <input id="startBtn" type="button" value="Start" onclick="startGame()" />
+        <input id="button" type="button" value="Stop" onclick="stopGame()" />
+    </div>
 
     <div class="race1">
-
+        
     </div>
 
     <div class="race2">
@@ -36,13 +39,5 @@
 
     </div>
 </body>
-
-<script>
-    $(document).ready(function () {
-        $("#btn").click(function () {
-            $('<div class="race1"></div>').appendTo()
-        })
-    })
-</script>
 
 </html>
