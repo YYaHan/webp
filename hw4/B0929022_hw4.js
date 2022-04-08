@@ -27,18 +27,13 @@ $(document).ready(function () {
             alert("輸光！");
             clearInterval(clk);
         }
-        $("img").filter(".race1").animate({ left: "+=5px" });
-        $("img").filter(".race2").animate({ left: "+=7px" });
-        $("img").filter(".race3").animate({ left: "+=8px" });
-        $("img").filter(".race4").animate({ left: "+=2px" });
-        $("img").filter(".race5").animate({ left: "+=1px" });
-        $("img").filter(".race6").animate({ left: "+=9px" });
+        $("img").filter(".ri1").animate({ left: "+=5px" });
+        $("img").filter(".ri2").animate({ left: "+=7px" });
+        $("img").filter(".ri3").animate({ left: "+=8px" });
+        $("img").filter(".ri4").animate({ left: "+=2px" });
+        $("img").filter(".ri5").animate({ left: "+=1px" });
+        $("img").filter(".ri6").animate({ left: "+=9px" });
     }, 1000);
-});
-
-
-$(document).ready(function () {
-    $("#button").click(stopGame);
 });
 
 //產生隨機字母
