@@ -15,12 +15,11 @@ var game_id = null;
 race = ["#race1", "#race2", "#race3", "#race4", "#race5", "#race6"]
 raceClass = ['<img class=ri1', '<img class=ri2', '<img class=ri3', '<img class=ri4', '<img class=ri5', '<img class=ri6'];
 
-
 $(document).ready(function () {
     $("#startBtn").click(function () {
         $(document).keydown(recordTime);
         $(document).keydown(function (key) {
-            addchar();
+            createCode();
             deleteCh(key.keyCode - 65);
         });
         var clk = setInterval(function () {
@@ -30,10 +29,10 @@ $(document).ready(function () {
             }
             $("img").filter(".race1").animate({ left: "+=50px" });
             $("img").filter(".race2").animate({ left: "+=75px" });
-            $("img").filter(".race3").animate({ left: "+=155px" });
-            $("img").filter(".race4").animate({ left: "+=147px" });
-            $("img").filter(".race5").animate({ left: "+=68px" });
-            $("img").filter(".race6").animate({ left: "+=98px" });
+            $("img").filter(".race3").animate({ left: "+=38px" });
+            $("img").filter(".race4").animate({ left: "+=42px" });
+            $("img").filter(".race5").animate({ left: "+=10px" });
+            $("img").filter(".race6").animate({ left: "+=12px" });
         }, 1000);
     });
 });
