@@ -1,3 +1,4 @@
+//上次用DOM,這次用陣列
 var img = new Array();
 img = ['id="A" src=img/A.png>', 'id="B" src=img/B.png>', 'id="C" src=img/C.png>', 'id="D" src=img/D.png>',
     'id="E" src=img/E.png>', 'id="F" src=img/F.png>', 'id="G" src=img/G.png>', 'id="H" src=img/H.png>', 'id="I" src=img/I.png>',
