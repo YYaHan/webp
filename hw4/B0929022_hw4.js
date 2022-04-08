@@ -27,12 +27,12 @@ $(document).ready(function () {
             alert("輸光！");
             clearInterval(clk);
         }
-        $("img").filter(".race1").animate({ left: "+=50px" });
-        $("img").filter(".race2").animate({ left: "+=75px" });
-        $("img").filter(".race3").animate({ left: "+=38px" });
-        $("img").filter(".race4").animate({ left: "+=42px" });
-        $("img").filter(".race5").animate({ left: "+=10px" });
-        $("img").filter(".race6").animate({ left: "+=12px" });
+        $("img").filter(".race1").animate({ left: "+=5px" });
+        $("img").filter(".race2").animate({ left: "+=7px" });
+        $("img").filter(".race3").animate({ left: "+=8px" });
+        $("img").filter(".race4").animate({ left: "+=2px" });
+        $("img").filter(".race5").animate({ left: "+=1px" });
+        $("img").filter(".race6").animate({ left: "+=9px" });
     }, 1000);
 });
 
