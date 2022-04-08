@@ -15,6 +15,33 @@ var game_id = null;
 race = ["#race1", "#race2", "#race3", "#race4", "#race5", "#race6"]
 raceClass = ['<img class=ri1', '<img class=ri2', '<img class=ri3', '<img class=ri4', '<img class=ri5', '<img class=ri6'];
 
+
+$(document).ready(function () {
+    $("#startBtn").click(function () {
+        $(document).keydown(recordTime);
+        $(document).keydown(function (key) {
+            addchar();
+            deleteCh(key.keyCode - 65);
+        });
+        var clk = setInterval(function () {
+            if (($("img").filter(".race1").last().offset().left) >= 1100 || $("img").filter(".race2").last().offset().left >= 1100 || $("img").filter(".race3").last().offset().left >= 1100 || $("img").filter(".race4").last().offset().left >= 1100 || $("img").filter(".race5").last().offset().left >= 1100 || $("img").filter(".race6").last().offset().left >= 1100) {
+                alert("輸光！");
+                clearInterval(clk);
+            }
+            $("img").filter(".race1").animate({ left: "+=50px" });
+            $("img").filter(".race2").animate({ left: "+=75px" });
+            $("img").filter(".race3").animate({ left: "+=155px" });
+            $("img").filter(".race4").animate({ left: "+=147px" });
+            $("img").filter(".race5").animate({ left: "+=68px" });
+            $("img").filter(".race6").animate({ left: "+=98px" });
+        }, 1000);
+    });
+});
+
+$(document).ready(function () {
+    $("#button").click(stopGame);
+});
+
 //產生隨機字母
 function createCode() {
     var index = [parseInt(Math.random() * 26)];
@@ -28,25 +55,18 @@ function createCode() {
 
 function deleteCh(key) {
     var racenum = 0;
-    var exist = 0;
+    var est = 0;
     while (racenum < 26) {
         if (($(race[racenum]).children(CODE[key]).index() == -1) || ($(race[racenum]).children(CODE[key]).index() == 0)) {
             racenum++;
         }
         else {
-            exist = 1;
+            est = 1;
             break;
         }
     }
-    if (exist) {
+    if (est) {
         deletecodearray(race[racenum], CODE[key]);
-    }
-    var keyCode = event.keyCode; //獲取鍵盤的字符
-    var code = String.fromCharCode(keyCode); //轉成大寫
-    var label = codeArray[0];
-    if (label.code == code) {
-        clearInterval(label.interval_id);
-        codeArray.splice(0, 1);
     }
 }
 
@@ -85,29 +105,3 @@ function stopGame() {
     codeArray = [];
     document.getElementById("startBtn").disabled = false;
 }
-
-$(document).ready(function () {
-    $("#startBtn").click(function () {
-        $(document).keydown(recordTime);
-        $(document).keydown(function (key) {
-            addchar();
-            deleteCh(key.keyCode - 65);
-        });
-        var clk = setInterval(function () {
-            if (($("img").filter(".race1").last().offset().left) >= 1100 || $("img").filter(".race2").last().offset().left >= 1100 || $("img").filter(".race3").last().offset().left >= 1100 || $("img").filter(".race4").last().offset().left >= 1100 || $("img").filter(".race5").last().offset().left >= 1100 || $("img").filter(".race6").last().offset().left >= 1100) {
-                alert("輸光！");
-                clearInterval(clk);
-            }
-            $("img").filter(".race1").animate({ left: "+=50px" });
-            $("img").filter(".race2").animate({ left: "+=75px" });
-            $("img").filter(".race3").animate({ left: "+=155px" });
-            $("img").filter(".race4").animate({ left: "+=147px" });
-            $("img").filter(".race5").animate({ left: "+=68px" });
-            $("img").filter(".race6").animate({ left: "+=98px" });
-        }, 1000);
-    });
-});
-
-$(document).ready(function () {
-    $("#button").click(stopGame);
-});
