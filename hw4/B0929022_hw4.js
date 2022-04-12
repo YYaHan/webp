@@ -50,11 +50,11 @@ function deleteCh(key) {
         }
     }
     if (est != 0) {
-        deletecodearray(race[racenum], CODE[key]);
+        deletearray(race[racenum], CODE[key]);
     }
 }
 
-function deletecodearray(race, Code) {
+function deletearray(race, Code) {
     $(race).children(Code).last().remove();
 }
 
