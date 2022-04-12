@@ -8,9 +8,11 @@ raceClass = ['<img class=ri1', '<img class=ri2', '<img class=ri3', '<img class=r
 
 $(document).ready(function () {
     $(document).keydown(recordTime);
-    $(document).keydown(function (key) {
+    $(document).keydown(function (event) {
         createCode();
-        deleteCh(key.keyCode - 65);
+        var keyCode = event.keyCode;
+        var furry = String.fromCharCode(keyCode);
+        deleteCh(furry);
     });
     var clk = setInterval(function () {
         if (($("img").filter(".race1").last().offset().left) >= 1100 || $("img").filter(".race2").last().offset().left >= 1100 || $("img").filter(".race3").last().offset().left >= 1100 || $("img").filter(".race4").last().offset().left >= 1100 || $("img").filter(".race5").last().offset().left >= 1100 || $("img").filter(".race6").last().offset().left >= 1100) {
@@ -28,7 +30,7 @@ $(document).ready(function () {
 
 //產生隨機字母
 function createCode() {
-    var index = [Math.floor(Math.random() * 26)];
+    var index = [parseInt(Math.random() * 26)];
     for (var i = 0; i < output; i++) {
         for (var j = 0; j < 6; j++) {
             $(race[j]).prepend(raceClass[j] + img[index]);
