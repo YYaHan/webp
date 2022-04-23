@@ -3,24 +3,28 @@
 
 <head>
     <style>
-        h1,div{
+        h1,
+        div {
             text-align: center;
-            margin:0px;
+            margin: 0px;
         }
-        .p3{
+
+        .p3 {
             display: inline;
-            float:left;
+            float: left;
             width: 33.3%;
             height: 100%;
-            border:1px;
+            border: 1px;
             font-size: 40px;
         }
+
         img {
             width: 120px;
             height: 80px;
             margin: 0;
         }
-        .point{
+
+        .point {
             width: 15px;
             height: 30px;
         }
@@ -31,21 +35,24 @@
     <script>
         var dataUrl = "https://ptx.transportdata.tw/MOTC/v2/Rail/Metro/ODFare/TYMC?%24top=420&%24format=JSON";
         var data = $.getJSON(dataUrl);
-        Station=["#S1","#S2","#S3","#S4","#S5","#S6","#S7","#S8","#S9","#S10","#S11","#S12","#S13","#S14","#S15","#S16","#S17","#S18","#S19","#S20","#S21"];
+        Station = ["#S1", "#S2", "#S3", "#S4", "#S5", "#S6", "#S7", "#S8", "#S9", "#S10", "#S11", "#S12", "#S13", "#S14", "#S15", "#S16", "#S17", "#S18", "#S19", "#S20", "#S21"];
         data.done(function (msg) {
             console.log(msg);
             Long = msg.length;
             console.log(Long);
             for (var i = 419; i >= 0; i -= 21) {
-                console.log(msg[i].OriginStationID + "To" + msg[i].DestinationStationID + " Time: " + msg[i].TravelTime + " Price: " + msg[i].Fares[0].Price+" i="+i);
-                console.log((i+22)/21);
-                console.log(Station[(i+1)/21]);
-                $('<h1 id=A'+(i+22)/21+'><img src="img/A'+(i+22)/21+'.png"></h1>').insertAfter("#heading");
-                $('<h1 id=S'+(i+22)/21+'></h1>').insertAfter("#heading");
-                $(Station[(i+22)/21-1]).prepend('<div class="p3" id=S'+(i+22)/21+'>'+msg[i].Fares[0].Price+"元"+'</div>');
-                $(Station[(i+22)/21-1]).prepend('<div class="p3"><img class="point"src=img/p.png></div>');
-                $(Station[(i+22)/21-1]).prepend('<div class="p3" id=S'+(i+22)/21+'>'+msg[i].TravelTime+"mins"+'</div>');
+                console.log(msg[i].OriginStationID + "To" + msg[i].DestinationStationID + " Time: " + msg[i].TravelTime + " Price: " + msg[i].Fares[0].Price + " i=" + i);
+                console.log((i + 22) / 21);
+                console.log(Station[(i + 1) / 21]);
+
+                $('<h1 id=A' + (i + 22) / 21 + '><img src="img/A' + (i + 22) / 21 + '.png"></h1>').insertAfter("#heading");
+                $('<h1 id=S' + (i + 22) / 21 + '></h1>').insertAfter("#heading");
+
+                $(Station[(i + 22) / 21 - 1]).prepend('<div class="p3" id=S' + (i + 22) / 21 + '>' + msg[i].Fares[0].Price + "元" + '</div>');
+                $(Station[(i + 22) / 21 - 1]).prepend('<div class="p3"><img class="point"src=img/p.png></div>');
+                $(Station[(i + 22) / 21 - 1]).prepend('<div class="p3" id=S' + (i + 22) / 21 + '>' + msg[i].TravelTime + "mins" + '</div>');
             }
+            //最後才插入A1的圖片
             $('<h1 id=A1><img src="img/A1.png"></h1>').insertAfter("#heading");
 
         });
