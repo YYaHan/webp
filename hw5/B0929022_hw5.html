@@ -35,21 +35,21 @@
     <script>
         var dataUrl = "https://ptx.transportdata.tw/MOTC/v2/Rail/Metro/ODFare/TYMC?%24top=420&%24format=JSON";
         var data = $.getJSON(dataUrl);
-        station=["#s1","#s2","#s3","#s4","#s5","#s6","#s7","#s8","#s9","#s10","#s11","#s12","#s13","#s14","#s15","#s16","#s17","#s18","#s19","#s20","#s21"];
+        station=["#S1","#S2","#S3","#S4","#S5","#S6","#S7","#S8","#S9","#S10","#S11","#S12","#S13","#S14","#S15","#S16","#S17","#S18","#S19","#S20","#S21"];
         data.done(function (msg) {
             console.log(msg);
-            mLen = msg.length;
-            console.log(mLen);
+            Length = msg.length;
+            console.log(Length);
             for (var i = 419; i >= 0; i -= 21) {
-                console.log(msg[i].OriginStationID + "To" + msg[i].DestinationStationID + " Time: " + msg[i].TravelTime + " Price: " + msg[i].Fares[0].Price+" i="+i);
-                console.log((i+22)/21);
-                console.log(station[(i+1)/21]);
-                $('<h1 id=A'+(i+22)/21+'><img src="img/A'+(i+22)/21+'.png"></h1>').insertAfter("#heading");
-                $('<h1 id=s'+(i+22)/21+'></h1>').insertAfter("#heading");
-                
-                $(station[(i+22)/20]).prepend('<div class="p3" id=s'+(i+22)/21+'>'+msg[i].Fares[0].Price+'</div>');
-                $(station[(i+22)/20]).prepend('<div class="p3"><img class="point"src=img/p.png></div>');
-                $(station[(i+22)/20]).prepend('<div class="p3" id=s'+(i+22)/21+'>'+msg[i].TravelTime+'</div>');
+                console.log(msg[i].OriginStationID + "To" + msg[i].DestinationStationID + " Time: " + msg[i].TravelTime + " Price: " + msg[i].Fares[0].Price + " i=" + i);
+                console.log((i + 22) / 21);
+                console.log(station[(i + 1) / 21]);
+                $('<h1 id=A' + (i + 22) / 21 + '><img src="img/A' + (i + 22) / 21 + '.png"></h1>').insertAfter("#heading");
+                $('<h1 id=s' + (i + 22) / 21 + '></h1>').insertAfter("#heading");
+
+                $(station[(i + 22) / 20]).prepend('<div class="p3" id=S' + (i + 22) / 21 + '>' + msg[i].Fares[0].Price + '</div>');
+                $(station[(i + 22) / 20]).prepend('<div class="p3"><img class="point"src=img/p.png></div>');
+                $(station[(i + 22) / 20]).prepend('<div class="p3" id=S' + (i + 22) / 21 + '>' + msg[i].TravelTime + '</div>');
             }
             $('<h1 id=A1><img src="img/A1.png"></h1>').insertAfter("#heading");
 
