@@ -46,11 +46,11 @@
             for (var i = 419; i >= 0; i -= 21) {
                 console.log(msg[i].OriginStationID + "To" + msg[i].DestinationStationID + "Time: " + msg[i].TravelTime + "Price: " + msg[i].Fares[0].Price + "i=" + i);
                 console.log((i + 22) / 21);
-                $('<h1 id=station' + (i + 22) / 21 + '><img src="img/A' + (i + 22) / 21 + '.png"></h1>').insertAfter("#title");
-                $('<h1 id=s' + (i + 22) / 21 + '></h1>').insertAfter("#title");
-                $(station[(i + 22) / 20]).prepend('<div class="p3" id=S' + (i + 22) / 21 + '>' + msg[i].Fares[0].Price + '</div>');
-                $(station[(i + 22) / 20]).prepend('<div class="p3"><img class="point"src=img/p.png></div>');
-                $(station[(i + 22) / 20]).prepend('<div class="p3" id=S' + (i + 22) / 21 + '>' + msg[i].TravelTime + '</div>');
+                $('<h1 id=A'+(i+22)/21+'><img src="img/A'+(i+22)/21+'.png"></h1>').insertAfter("#title");
+                $('<h1 id=S'+(i+22)/21+'></h1>').insertAfter("#set");
+                $(station[(i+22)/21-1]).prepend('<div class="p3" id=S'+(i+22)/21+'>'+msg[i].Fares[0].Price+'</div>');
+                $(station[(i+22)/21-1]).prepend('<div class="p3"><img class="ar"src=img/p.png></div>');
+                $(station[(i+22)/21-1]).prepend('<div class="p3" id=S'+(i+22)/21+'>'+msg[i].TravelTime+'</div>');
             }
     
             $('<h1 id=A1><img src="img/A1.png"></h1>').insertAfter("#title");
