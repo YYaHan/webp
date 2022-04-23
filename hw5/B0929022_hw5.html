@@ -19,7 +19,7 @@
 
         img {
             width: 120px;
-            height: 100px;
+            height: 80px;
             margin: 0;
         }
 
@@ -37,8 +37,8 @@
         Station=["#S1","#S2","#S3","#S4","#S5","#S6","#S7","#S8","#S9","#S10","#S11","#S12","#S13","#S14","#S15","#S16","#S17","#S18","#S19","#S20","#S21"];
         data.done(function (msg) {
             console.log(msg);
-            mLen = msg.length;
-            console.log(mLen);
+            Long = msg.length;
+            console.log(Long);
             for (var i = 419; i >= 0; i -= 21) {
                 console.log(msg[i].OriginStationID + "To" + msg[i].DestinationStationID + " Time: " + msg[i].TravelTime + " Price: " + msg[i].Fares[0].Price+" i="+i);
                 console.log((i+22)/21);
