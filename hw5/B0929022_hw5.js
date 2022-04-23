@@ -12,13 +12,13 @@ data.done(function (msg) {
         console.log(msg[i].OriginStationID + "To" + msg[i].DestinationStationID + "Time: " + msg[i].TravelTime + "Price: " + msg.Fares[0] + "i=" + i);
         console.log((i + 22) / 21);
         $('<h1 id=station'+(i+22)/21+'><img src="img/A'+(i+22)/21+'.png"></h1>').insertAfter("#title");
-        $('<h1 id=br'+(i+22)/21+'></h1>').insertAfter("#title");
-        $(station[(i+22)/20]).prepend('<div class="p3" id=sta'+(i+22)/21+'>'+msg[i].Fares[0].Price+'</div>');
+        $('<h1 id=s'+(i+22)/21+'></h1>').insertAfter("#title");
+        $(station[(i+22)/20]).prepend('<div class="p3" id=A'+(i+22)/21+'>'+msg[i].Fares[0].Price+'</div>');
         $(station[(i+22)/20]).prepend('<div class="p3"><img class="point"src=img/p.png></div>');
-        $(station[(i+22)/20]).prepend('<div class="p3" id=sta'+(i+22)/21+'>'+msg[i].TravelTime+'</div>');
+        $(station[(i+22)/20]).prepend('<div class="p3" id=A'+(i+22)/21+'>'+msg[i].TravelTime+'</div>');
     }
 
-    $('<h1 id="A1"><img src="img/A1.png"></h1>').insertAfter("#title");
+    $('<h1 id=A1><img src="img/A1.png"></h1>').insertAfter("#title");
 });
 
 data.fail(function(msg){
