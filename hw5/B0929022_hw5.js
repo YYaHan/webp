@@ -1,5 +1,5 @@
-var tags = "station";
-var dataUrl = " https://ptx.transportdata.tw/MOTC/?urls.primaryName=軌道V2#/Metro/MetroApi_ODFare_2102";
-var data = $.getJson(dataUrl);
+var dataUrl = "https://ptx.transportdata.tw/MOTC/v2/Rail/Metro/ODFare/TYMC?%24top=420&%24format=JSON";
+var data = $.getJSON(dataUrl);
+
 
 
