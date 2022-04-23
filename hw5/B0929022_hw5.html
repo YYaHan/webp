@@ -45,9 +45,9 @@
                 console.log(Station[(i+1)/21]);
                 $('<h1 id=A'+(i+22)/21+'><img src="img/A'+(i+22)/21+'.png"></h1>').insertAfter("#heading");
                 $('<h1 id=S'+(i+22)/21+'></h1>').insertAfter("#heading");
-                $(Station[(i+22)/21-1]).prepend('<div class="p3" id=S'+(i+22)/21+'>'+msg[i].Fares[0].Price+'</div>');
+                $(Station[(i+22)/21-1]).prepend('<div class="p3" id=S'+(i+22)/21+'>'+msg[i].Fares[0].Price+"元"+'</div>');
                 $(Station[(i+22)/21-1]).prepend('<div class="p3"><img class="point"src=img/p.png></div>');
-                $(Station[(i+22)/21-1]).prepend('<div class="p3" id=S'+(i+22)/21+'>'+msg[i].TravelTime+'</div>');
+                $(Station[(i+22)/21-1]).prepend('<div class="p3" id=S'+(i+22)/21+'>'+msg[i].TravelTime+"mins"+'</div>');
             }
             $('<h1 id=A1><img src="img/A1.png"></h1>').insertAfter("#heading");
 
