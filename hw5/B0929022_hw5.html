@@ -44,7 +44,7 @@
             console.log(mLong);
     
             for (var i = 419; i >= 0; i -= 21) {
-                console.log(msg[i].OriginStationID + "To" + msg[i].DestinationStationID + "Time: " + msg[i].TravelTime + "Price: " + msg.Fares[0].Price + "i=" + i);
+                console.log(msg[i].OriginStationID + "To" + msg[i].DestinationStationID + "Time: " + msg[i].TravelTime + "Price: " + msg[i].Fares[0].Price + "i=" + i);
                 console.log((i + 22) / 21);
                 $('<h1 id=station' + (i + 22) / 21 + '><img src="img/A' + (i + 22) / 21 + '.png"></h1>').insertAfter("#title");
                 $('<h1 id=s' + (i + 22) / 21 + '></h1>').insertAfter("#title");
