@@ -6,16 +6,16 @@
         h1,
         div {
             text-align: center;
-            margin: 10px;
+            margin: 0px;
         }
 
         .p3 {
             font-size: 32px;
             display: inline;
             float: left;
-            width: 30%;
+            width: 33.3%;
             height: 100%;
-            border: 1px;
+            border: 0px;
         }
 
         img {
@@ -26,7 +26,7 @@
 
         .point {
             width: 15px;
-            height: 45px;
+            height: 30px;
         }
     </style>
     <mata charset="UTF-8"></mata>
@@ -40,12 +40,14 @@
             console.log(msg);
             Length = msg.length;
             console.log(Length);
+
             for (var i = 419; i >= 0; i -= 21) {
                 console.log(msg[i].OriginStationID + "To" + msg[i].DestinationStationID + " Time: " + msg[i].TravelTime + " Price: " + msg[i].Fares[0].Price + " i=" + i);
                 console.log((i + 22) / 21);
                 console.log(Station[(i + 1) / 21]);
                 $('<h1 id=A'+(i+22)/21+'><img src="img/A'+(i+22)/21+'.png"></h1>').insertAfter("#heading");
                 $('<h1 id=S'+(i+22)/21+'></h1>').insertAfter("#heading");
+
                 $(Station[(i+22)/21-1]).prepend('<div class="p3" id=S'+(i+22)/21+'>'+msg[i].Fares[0].Price+'</div>');
                 $(Station[(i+22)/21-1]).prepend('<div class="p3"><img class="point"src=img/p.png></div>');
                 $(Station[(i+22)/21-1]).prepend('<div class="p3" id=S'+(i+22)/21+'>'+msg[i].TravelTime+'</div>');
