@@ -12,7 +12,7 @@
         .p3 {
             display: inline;
             float: left;
-            width: 33.3%;
+            width: 30%;
             height: 100%;
             border: 1px;
             font-size: 40px;
@@ -30,17 +30,20 @@
         }
     </style>
     <mata charset="UTF-8"></mata>
-
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script>
         var dataUrl = "https://ptx.transportdata.tw/MOTC/v2/Rail/Metro/ODFare/TYMC?%24top=420&%24format=JSON";
         var data = $.getJSON(dataUrl);
+
         Station = ["#S1", "#S2", "#S3", "#S4", "#S5", "#S6", "#S7", "#S8", "#S9", "#S10", "#S11", "#S12", "#S13", "#S14", "#S15", "#S16", "#S17", "#S18", "#S19", "#S20", "#S21"];
+        
         data.done(function (msg) {
             console.log(msg);
             Long = msg.length;
             console.log(Long);
+            
             for (var i = 419; i >= 0; i -= 21) {
+                //CJ說：不知道獲取什麼資料就印出來康康
                 console.log(msg[i].OriginStationID + "To" + msg[i].DestinationStationID + " Time: " + msg[i].TravelTime + " Price: " + msg[i].Fares[0].Price + " i=" + i);
                 console.log((i + 22) / 21);
                 console.log(Station[(i + 1) / 21]);
@@ -56,9 +59,11 @@
             $('<h1 id=A1><img src="img/A1.png"></h1>').insertAfter("#heading");
 
         });
+
         data.fail(function (msg) {
+            //CJ說：不知道是啥就印出來康康
             console.log(msg);
-            $("#contain").html("fail.");
+            alert('Get the wrong massage.');
         });
     </script>
 </head>
